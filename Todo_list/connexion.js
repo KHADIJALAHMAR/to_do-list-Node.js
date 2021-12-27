@@ -1,21 +1,20 @@
 class Databas{
     constructor(){
         const mysql = require('mysql');
-        const connection = mysql.createConnection({
+        this.connection = mysql.createConnection({
             host: 'localhost',
             user: 'root',
             password: '',
             database: 'todo_list'
         });
-        connection.connect((err) => {
+        this.connection.connect((err) => {
             if (err) throw err;
             console.log('Connected!');
         });
         
     }
-
 }
-let databas  =new Databas;
+module.exports = Databas;
 
 
 

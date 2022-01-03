@@ -25,3 +25,4 @@ let deleteProject = (id) => {
     });
 }
 module.exports = getProjects ;
+module.exports = deleteProject ;

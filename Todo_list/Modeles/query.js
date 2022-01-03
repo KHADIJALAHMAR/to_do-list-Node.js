@@ -19,10 +19,10 @@ let getProjects = (callback) => {
   
 }
 
-let deleteProject = (id) => {
-    database.connection.query(`DELETE FROM projects WHERE id_project = ?`, [2], function(err, res) {
-        if(err) throw err;
-    });
-}
+// let deleteProject = (id) => {
+//     database.connection.query(`DELETE FROM projects WHERE id_project = ?`, [2], function(err, res) {
+//         if(err) throw err;
+//     });
+// }
 module.exports = getProjects ;
-module.exports = deleteProject ;
+// module.exports = deleteProject ;

@@ -1,8 +1,9 @@
 
 
-const http = require('http');
 const fs = require('fs');
-let ejs = require('ejs');
+const ejs = require('ejs');
+const getProjects =require('../Models/query');
+const pt = require('path');
 
 const server =http.createServer((req, res) =>{
     console.log(req.url , req.method) ;

@@ -21,8 +21,8 @@ const server =http.createServer((req, res) =>{
                 res.end(ejsContent);
             });
             break;
-            
-                if(path.pathname === '/deleteProject') {
+            case '/deleteProject':
+               if(path.pathname === '/deleteProject') {
                     path  = 'index';
                     projects.deleteProject(query.id_project);
                     projects.getProjects((projects) => {

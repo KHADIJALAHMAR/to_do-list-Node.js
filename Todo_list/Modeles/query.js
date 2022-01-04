@@ -39,4 +39,5 @@ let addProject = (infos) => {
     })
 }
 module.exports = getProjects ;
-// module.exports = deleteProject ;
+module.exports = deleteProject ;
+module.exports = addProject ;

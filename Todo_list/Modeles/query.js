@@ -19,10 +19,24 @@ let getProjects = (callback) => {
   
 }
 
-// let deleteProject = (id) => {
-//     database.connection.query(`DELETE FROM projects WHERE id_project = ?`, [2], function(err, res) {
-//         if(err) throw err;
-//     });
-// }
+
+
+
+
+let deleteProject = (id) => {
+    database.connection.query(`DELETE FROM projects WHERE id_project = ?`, [2], function(err, res) {
+        if(err) throw err;
+    });
+}
+
+
+let addProject = (infos) => {
+    con.query("INSERT INTO projects SET ?", infos, (err, res) => {
+        if(err) throw err;
+        else{
+            console.log('Data stored');
+        }
+    })
+}
 module.exports = getProjects ;
 // module.exports = deleteProject ;

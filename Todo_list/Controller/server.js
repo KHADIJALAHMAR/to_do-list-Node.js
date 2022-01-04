@@ -21,10 +21,18 @@ const server =http.createServer((req, res) =>{
                 res.end(ejsContent);
             });
             break;
-            // case '/deleteProject':
-            //     path += 'index';
-            //     deleteProject();
-            //     break;
+            
+                if(path.pathname === '/deleteProject') {
+                    path  = 'index';
+                    projects.deleteProject(query.id_project);
+                    projects.getProjects((projects) => {
+                        res.writeHead(200 , {'Content-Type' : 'text/html'});
+                        let ejsFile = fs.readFileSync(pt.join(__dirname, 'views', `${page}.ejs`) , 'utf-8');
+                        let ejsContent = ejs.render(ejsFile, {projects: projects});
+                        res.end(ejsContent);
+                    });
+
+                break;
             case '/about':
                 path  += 'about.ejs';
                 res.statusCode = 200;
